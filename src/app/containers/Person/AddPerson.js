@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import './Person.css';
 import CustomInput from '../../components/input';
 import {showSuccessToast, showErrorToast} from "../../utils/showToast";
-// import { ToastContainer, toast } from 'react-toastify';
+import {emailValidation} from '../../utils/validation';
 
 
 const AddPerson = (props) => {
@@ -26,12 +26,10 @@ const AddPerson = (props) => {
         var pattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
         let errMsg = "";
         if (firstName === "" || lastName === "" || email === "" || phoneNumber === "") {
-            errMsg += "Fields are empty\n";
+            errMsg += "Fields are empty<br/>";
+        }else{
+            errMsg =  emailValidation(email);
         }
-        if (email !== "" && pattern.test(email) === false) {
-            errMsg += "Email format mismatch\n"
-        }
-
         if (errMsg === "") {
             fetch('https://todo-app-fe05a.firebaseio.com/Persons.json', {
                 method: 'POST',
