@@ -1,7 +1,7 @@
 import React,{useState, useEffect} from 'react';
 import '../ListPerson/PersonList.css'
 import Loader from '../../components/Loader/Loader';
-import Navigation from '../../components/NavigationBar/Navgigation'
+// import Navigation from '../../components/NavigationBar/Navgigation'
 
 const PersonList = ()=>{
     const [Person, SetPerson] = useState([]);
@@ -28,7 +28,7 @@ const PersonList = ()=>{
             .catch(err=>{
 
             })
-    },Person);
+    },[]);
 
     const onDeleteHandler = (id) => {
         SetLoading(true);
