@@ -1,21 +1,23 @@
-table, td, th {
-  border: 1px solid black;
-}
-
-th{
-  background-color: lightblue;
-}
-
-table {
-  border-collapse: collapse;
-  width: 100%;
+table,
+td,
+th {
+    border: 1px solid black;
 }
 
 th {
-  height: 50px;
+    background-color: lightblue;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th {
+    height: 50px;
 }
 
 h2 {
-  text-align: center;
-  color: red;
+    text-align: center;
+    color: red;
 }
